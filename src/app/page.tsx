@@ -7,14 +7,9 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div>
-      <div className="bg">
-        <Hero />
-        
-      </div>
-      <Features />
-      <Testimonials />
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      
+    </>
   );
 }

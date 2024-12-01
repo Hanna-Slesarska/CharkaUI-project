@@ -1,4 +1,3 @@
-
 'use client'
 
 import {
@@ -32,24 +31,24 @@ interface Props {
 
 const articles = [
   {
-    image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8eW9nYXxlbnwwfHwwfHx8MA%3D%3D",
-    title: "Kumbhaka",
-    text: "On the effect and purpose of hypoventilation techniques of pranayama. Kumbhaka (breath-holding) as the ultimate form of controlled hypoventilation. "
+    image: "https://images.unsplash.com/photo-1480001939717-9952e8200db2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Pick Beginner-Friendly Trails",
+    text: "Start with well-marked trails like those in national parks to build confidence."
   },
   {
-    image: "https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHlvZ2F8ZW58MHx8MHx8fDA%3D",
-    title: "Meditation: where to start",
-    text: "Practical recommendations for beginners. Typical mistakes and misconceptions at the initial stage."
+    image: "https://images.unsplash.com/photo-1484911579927-b3f008130467?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Invest in the Right Gear",
+    text: "Sturdy hiking boots, a good backpack, and clothing are essentials."
   },
   {
-    image: "https://plus.unsplash.com/premium_photo-1663013710516-40cf01373a2f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D",
-    title: "Yoga nidra - effectiveness",
-    text: "What is yoga nidra and how to practice it properly. What is yoga nidra and how to practice it properly. Techniques"
+    image: "https://images.unsplash.com/photo-1606658635939-3d6b10204dc3?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Perfecting the Classic Cherry Pie",
+    text: "Cherry pie is a beloved classic that brings comfort to any table."
   },
   {
-    image: "https://plus.unsplash.com/premium_photo-1679596990572-9af483a16253?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8eW9nYXxlbnwwfHwwfHx8MA%3D%3D",
-    title: "Mantra OM. Techniques",
-    text: "The purpose and effect of mantras in yoga practice, the impact and technique of performing the mantra OM / AUM."
+    image: "https://images.unsplash.com/photo-1605433246995-23f532d1e001?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Fun and Easy Baking Projects for Kids",
+    text: "Baking with kids is a wonderful way to spend quality time together."
   }
 ]
 interface ArticleCardProps {
@@ -61,7 +60,7 @@ interface ArticleCardProps {
 const ArticleCard = (props: ArticleCardProps) => {
   const { title, text, image, index } = props
   return (
-    <Center mx={2} py={6}>
+    <Center mx={2} py={6} >
     <Box
       maxW={'350px'}
       w={'full'}
@@ -75,6 +74,9 @@ const ArticleCard = (props: ArticleCardProps) => {
         <Image
           src={image}
           alt="Example"
+          w="100%" // Adjust width
+          h="auto" // Maintain aspect ratio
+          objectFit="cover"
         />
       </Box>
       <Stack>
@@ -127,6 +129,7 @@ const BlogTags = (props: Props) => {
 interface BlogAuthorProps {
   date: Date
   name: string
+  color: string
 }
 
 const BlogAuthor = (props: BlogAuthorProps) => {
@@ -147,77 +150,78 @@ const BlogAuthor = (props: BlogAuthorProps) => {
 
 const BlogPage = () => {
   return (
-    <Container maxW={'7xl'} p="12">
-      <Heading as="h1">Stories by Chakra Templates</Heading>
-      <Box
-        marginTop={{ base: '1', sm: '5' }}
-        display="flex"
-        flexDirection={{ base: 'column', sm: 'row' }}
-        justifyContent="space-between">
+    <Box bg="rgba(13, 148, 136, 0.8)" minH="100vh">
+      <Container maxW={'7xl'} p="12" >
+        <Heading as="h1" mt="24" color="white">Stories by Chakra Templates</Heading>
         <Box
+          marginTop={{ base: '1', sm: '5' }}
           display="flex"
-          flex="1"
-          marginRight="3"
-          position="relative"
-          alignItems="center">
+          flexDirection={{ base: 'column', sm: 'row' }}
+          justifyContent="space-between">
           <Box
-            width={{ base: '100%', sm: '85%' }}
-            zIndex="2"
-            marginLeft={{ base: '0', sm: '5%' }}
-            marginTop="5%">
-            <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              <Image
-                borderRadius="lg"
-                src={
-                  'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8eW9nYXxlbnwwfHwwfHx8MA%3D%3D'
-                }
-                alt="some good alt text"
-                objectFit="contain"
+            display="flex"
+            flex="1"
+            marginRight="3"
+            position="relative"
+            alignItems="center">
+            <Box
+              width={{ base: '100%', sm: '85%' }}
+              zIndex="2"
+              marginLeft={{ base: '0', sm: '5%' }}
+              marginTop="5%">
+              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                <Image
+                  borderRadius="lg"
+                  src={
+                    'https://images.unsplash.com/photo-1616430284384-62ba9ce6c11d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  }
+                  alt="some good alt text"
+                  objectFit="contain"
+                />
+              </Box>
+            </Box>
+            <Box zIndex="1" width="100%" position="absolute" height="100%">
+              <Box
+                bgGradient={useColorModeValue(
+                  'radial(orange.600 1px, transparent 1px)',
+                  'radial(orange.300 1px, transparent 1px)',
+                )}
+                backgroundSize="20px 20px"
+                opacity="0.4"
+                height="100%"
               />
             </Box>
           </Box>
-          <Box zIndex="1" width="100%" position="absolute" height="100%">
-            <Box
-              bgGradient={useColorModeValue(
-                'radial(orange.600 1px, transparent 1px)',
-                'radial(orange.300 1px, transparent 1px)',
-              )}
-              backgroundSize="20px 20px"
-              opacity="0.4"
-              height="100%"
-            />
+          <Box
+            display="flex"
+            flex="1"
+            flexDirection="column"
+            justifyContent="center"
+            marginTop={{ base: '3', sm: '0' }}>
+            <BlogTags tags={['Engineering', 'Product']} />
+            <Heading marginTop="1" color="white">
+              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                Blog article title
+              </Text>
+            </Heading>
+            <Text
+              as="p"
+              marginTop="2"
+              color="white"
+              fontSize="lg">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
+              1500s, when an unknown printer took a galley of type and scrambled it to make
+              a type specimen book.
+            </Text>
+            <BlogAuthor color="white" name="John Doe" date={new Date('2024-04-06T19:01:27Z')} />
           </Box>
         </Box>
-        <Box
-          display="flex"
-          flex="1"
-          flexDirection="column"
-          justifyContent="center"
-          marginTop={{ base: '3', sm: '0' }}>
-          <BlogTags tags={['Engineering', 'Product']} />
-          <Heading marginTop="1">
-            <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              Blog article title
-            </Text>
-          </Heading>
-          <Text
-            as="p"
-            marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book.
-          </Text>
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
-        </Box>
-      </Box>
-      <Heading as="h2" marginTop="5">
-        Latest articles
-      </Heading>
-      <Divider marginTop="5" />
-     
+        <Heading as="h2" marginTop="5">
+          Latest articles
+        </Heading>
+        <Divider marginTop="10" />
+       
         <Wrap spacing='10px' align='center'>
           <WrapItem>
             {articles.map((cardInfo, index) => (
@@ -225,10 +229,8 @@ const BlogPage = () => {
         ))}
           </WrapItem>
         </Wrap>
-       
-     
-      
-    </Container>
+      </Container>
+    </Box>
   )
 }
 

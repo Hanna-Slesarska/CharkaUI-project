@@ -1,146 +1,138 @@
-'use client'
+// 'use client'
 
-import {
-  Container,
-  Stack,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  Button,
-  Image,
+// import { Button } from "@/components/ui/button"
+// import { HStack } from "@chakra-ui/react"
+// import { Image, Box, Container, Heading, Highlight, Text, Flex } from "@chakra-ui/react"
+
+
+
+// const Hero = () => {
+//   return (
+// <Flex w="100vw" h="100vh">
+//       {/* Left Text Container */}
+//       <Box
+//         flex="1"
+//         bg="gray.100"
+//         display="flex"
+//         flexDirection="column"
+//         justifyContent="center"
+//         alignItems="flex-start"
+//         px="8"
+//         zIndex='-1'
+//       >
+//         <Heading as="h1" size="2xl" mb="4" color="gray.800">
+//           <Highlight query="there!" styles={{ color: "teal.600" }}>
+//             Hi there!
+//           </Highlight>
+//       </Heading>
+//         <Text fontSize="lg" color="gray.600">
+//         My name is Hanna and I am a web developer.
+//         </Text>
+//       </Box>
+
+//       {/* Right Image Container with Overlay */}
+//       <Box
+//         flex="1"
+//         bgImage="url('./my_photo.jpg')"
+//         bgSize="cover"
+//         bgPosition="bottom"
+//         position="relative"
+//       >
+//         {/* Overlay */}
+//         <Box
+//           position="absolute"
+//           top="0"
+//           left="0"
+//           right="0"
+//           bottom="0"
+//           bg="blackAlpha.750" // Semi-transparent black overlay
+//           zIndex="1"
+//         >
+//         </Box>
+//       </Box>
+//     </Flex>
   
-} from '@chakra-ui/react'
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure
-} from '@chakra-ui/react'
+//   )
+// }
 
-export default function Hero() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+// export default Hero
+
+import { Box,Image, Flex, Heading, Highlight, Text } from "@chakra-ui/react"
+
+const Hero = () => {
   return (
-    <Container maxW={'7xl'} >
-      <Stack
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-            <Text
-              as={'span'}
-              position={'relative'}
-              mb={'2'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: '30%',
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: '#6765f0',
-                zIndex: -1,
-              }}>
-              Right Way
-            </Text>
-           
-            <Flex direction={'column'} position={'relative'}>
-                <Text as={'span'} color={'#6765f0'}>
-                    YOGA
-                </Text>
-                <Image position={'absolute'} bottom={'-5'} 
-                left={'0'} zIndex={'0'} src="/line.png" alt="" width='200px'/>
-            </Flex>
-            
-          </Heading>
-          <Text color={'gray.500'}>
-          With a subscription to our studio, you can attend any of 
-          the proposed yoga directions at a convenient time for you. 
-          Sign up and have fun.
-          </Text>
-          <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-            <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-              colorScheme={'red'}
-              bg={'#6765f0'}
-              _hover={{ bg: '#725efe' }}>
-              Our Services
-            </Button>
-            <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-              onClick={onOpen}
-              >
-              Watch Video
-            </Button>
-          </Stack>
-        </Stack>
+    <Flex w="100vw" h="100vh">
+      {/* Left Text Container */}
+      <Box
+        flex="1"
+        bg="gray.100"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="flex-start"
+        px="16"
+      >
+        <Heading as="h1" size="2xl" mb="4" color="gray.800" fontSize="128px">
+          <Highlight query="there!" styles={{ color: "teal.600" }}>
+            Hi there!
+          </Highlight>
+        </Heading>
+        <Text fontSize="lg" color="gray.600" py="16" w="90%">
+          I’m a web developer, which means I spend most of my time convincing computers 
+          to do what I want (and occasionally Googling why they won’t). 
+          When I’m not knee-deep in code, you’ll probably find me drinking an unhealthy 
+          amount of coffee, trying to remember where I left my phone, or staring at my screen 
+          pretending to debug something important. I create websites that look pretty, work seamlessly, 
+          and occasionally impress my family. Welcome to my corner of the internet—make yourself at home!
+        </Text>
+        <Image 
+          src="./my_photo.jpg"
+          position="absolute"
+          objectFit="cover"
+          top="50%" 
+          right="20%" 
+          transform="translate(-50%, -50%)"
+          w="380px"
+          h="480px"
+          zIndex="15"
+          borderRadius="lg" 
+          boxShadow="lg"
+        />
+      </Box>
 
-        <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalCloseButton />
-          <ModalBody>
-            <Box as='iframe'
-              src='/video-yoga.mp4'
-              width='100%'
-              
-              sx={{
-                aspectRatio: '16/9'
-              }}
-              />
-          </ModalBody>
+      {/* Right Image Container with Overlay */}
+      <Box
+        flex="1"
+        bgImage="url('./my_photo.jpg')" // Your image path
+        bgSize="cover"
+        bgPosition="bottom"
+        position="relative"
+        px="16"
+      >
+        {/* Overlay */}
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          bg="rgba(13, 148, 136, 0.7)" // Semi-transparent black overlay
+          zIndex="1"
+        ></Box>
 
-          <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant='ghost'>Secondary Action</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-
-        <Flex
-          flex={1}
-          justify={'center'}
-          align={'center'}
-          position={'relative'}
-          w={'full'}>
-        
-          <Box
-            position={'relative'}
-            height={'390px'}
-            rounded={'2xl'}
-           
-            width={'full'}
-            overflow={'hidden'}>
-            
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              align={'center'}
-              w={'100%'}
-              h={'100%'}
-              src='/hero.png'
-            />
-          </Box>
-        </Flex>
-      </Stack>
-    </Container>
+        {/* Ensuring the container content is behind the overlay */}
+        <Box
+          position="relative"
+          zIndex="0"
+          h="100%"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+        </Box>
+      </Box>
+    </Flex>
   )
 }
 
+export default Hero
