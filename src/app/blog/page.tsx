@@ -100,7 +100,7 @@ const ArticleCard = (props: ArticleCardProps) => {
         </Text>
       </Stack>
       <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-        <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+        <BlogAuthor color="white" name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
       </Stack>
     </Box>
   </Center>
